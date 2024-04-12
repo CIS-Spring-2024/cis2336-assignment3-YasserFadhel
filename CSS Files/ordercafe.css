@@ -1,0 +1,452 @@
+/* CSS File for CoogEats */
+
+body{
+    background-color: #E3E7E8;
+    font-family: system-ui;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    animation: slideDown 1.5s ease forwards;
+}
+
+/*Current page is highlighted with a different color on the nav bar*/
+.pactive {
+    background-color: rgb(128, 8, 8);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Styling for the logo */
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Styling for the navigation bar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    padding: 10px 0px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    padding: 25px 25px;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+/*Hover behavior for nav bar elements*/
+nav ul li a:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: rgb(121, 9, 9);
+}
+
+/*Styling for Order Now button*/
+.link {
+    border: 2px;
+    border-radius: 25px;
+    border-color: white;
+    border-style: groove;
+    background-color: white;
+    color: rgb(121, 9, 9);
+    font-weight: bolder;
+    font-size: 16px;
+    margin-right: 20px;
+    padding: 0px 20px;
+    transition: background-color 0.5s ease;
+}
+
+/*Hover behavior for order now button*/
+.link:hover {
+    color: white;
+    background-color: rgb(121, 9, 9);
+}
+
+.container{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+    animation: slideUp 2s ease forwards;
+}
+
+/* Styling for the title and shopping cart icon */
+main{
+    display: grid;
+    grid-template-columns: 1fr 0px;
+    padding: 5px 10px;
+    margin-top: 50px;
+}
+main .shopping{
+    position: relative;
+    text-align: right;
+    top: 20px;
+    left: 80%;
+}
+main .shopping img{
+    width: 40px;
+    background-color: #4e4e4ea4;
+    padding: 10px;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+main .shopping img:hover{
+    background-color: #661b1ba4;
+    transform: scale(1.1);
+}
+
+main .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    left: 80%;
+    padding: 1px 6px;
+}
+
+/* Styling for the item list */
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+.list .item{
+    text-align: center;
+    background-color: #DCE0E1;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 50px 50px #75767641;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.list .item:hover {
+    transform: scale(1.05); 
+}
+
+.list .item img{
+    width: 90%;
+    height: 430px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 10px;
+}
+.list .item button{
+    background-color: #1C1F25;
+    color: #fff;
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.list .item button:hover{
+    background-color: #fff;
+    color: #1C1F25;
+    width: 60%;
+    padding: 10px;
+    border-radius: 25px;
+    transition: background-color 0.25s ease;
+    transition: width .5s ease;
+}
+
+/* Styling for desaturate class */
+.desaturated {
+    filter: grayscale(70%);
+    transition: filter .5s ease; 
+}
+
+/* Styling for the shopping cart */
+.cart {
+    position: fixed;
+    top: 150px; 
+    right: -400px; 
+    width: 400px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.911);
+    backdrop-filter: blur(10px);
+    height: calc(80vh); 
+    transition: right 0.5s ease; 
+}
+
+.active .cart {
+    right: 0; /* move the cart back onto the screen when active */
+}
+
+.active .container {
+    transform: translateX(-200px);
+}
+
+.cart h1 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart .checkOut {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Styling for the checkout button and its hover behaviour */
+.cart .checkOut div {
+    background-color: rgb(128, 8, 8);
+    color: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.cart .checkOut div:hover {
+    background-color: #fff;
+    color: rgb(128, 8, 8);
+}
+
+/* Styling for the close button and its hover behaviour, its a dependent on the checkout button and considered its child element */
+.cart .checkOut div:nth-child(2) {
+    background-color: #1C1F25;
+    color: #fff;
+    transition: 0.25s;
+}
+
+.cart .checkOut div:nth-child(2):hover {
+    background-color: #ffffff;
+    color: #1C1F25;
+}
+
+/* Styling for the list within the shopping cart*/
+.listCart li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCart li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCart li img{
+    width: 90%;
+}
+.listCart li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCart .count{
+    margin: 0 10px;
+}
+
+
+/* Styling for the footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Styling for the logo in the footer */
+.footer-left img {
+    max-width: 150px; 
+}
+
+/* Styling for the quicklinks footer */
+#qulink {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.quick-links {
+    text-align: center; 
+}
+
+.quick-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links ul li {
+    display: inline;
+    margin-right: 10px; 
+}
+
+.quick-links ul li a {
+    color: white; 
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Add transition for hover effect */
+}
+
+.quick-links ul li a:hover {
+    color: black; 
+    background-color: white;
+}
+
+/* Styling for the text on the right side of the footer (copyright, and other info) */
+.footer-right {
+    text-align: center;
+    font-style: italic;
+    
+}
+
+/* For smaller screens, we adjust header padding and font size for elements */
+@media only screen and (max-width: 1280px) {
+   
+    .logo img {
+        max-width: 80px;
+    }
+
+    /*font size reduction for mutiple elements*/
+    nav ul li a,
+    .link {
+        font-size: 16px;
+    }
+
+    nav ul li a {
+        padding: 0px;
+        margin-right: 1px;
+    }
+
+    .active{
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin-right: 40px;
+        padding: 10px 0px;
+    }
+
+    nav ul li a:hover {
+        padding: 10px;
+    }
+
+    main{
+        grid-template-columns: .82fr 0px;
+    }
+}    
+
+/* For even smaller screens*/
+@media only screen and (max-width: 1000px) {
+    .list{
+        display: grid;
+        grid-template-columns: repeat(2, .45fr);
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .logo img {
+        max-width: 30px;
+    }
+
+    /*font size reduction for mutiple elements*/
+    nav ul li a,
+    .link {
+        font-size: 10px;
+    }
+
+    nav ul li a {
+        padding: 2px;
+        margin-right: 4px;
+    }
+    main{
+        grid-template-columns: .2fr 0px;
+    }
+    .list{
+        display: grid;
+        grid-template-columns: repeat(2, .35fr);
+        column-gap: 10px;
+        row-gap: 10px;
+        margin-top: 50px;
+    }
+}
+
+
+
+/* Animation for image sliding down */
+/* Takes end position and starts the element offscreen before sliding it down to position */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for text sliding up */
+/* Takes end position and starts the element offscreen before sliding it up to position */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
