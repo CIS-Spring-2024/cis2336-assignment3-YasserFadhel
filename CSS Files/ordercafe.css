@@ -279,7 +279,7 @@ main .shopping span{
     align-items: center;
 }
 .listCart li img{
-    width: 90%;
+    width: 6vh;
 }
 .listCart li button{
     background-color: #fff5;
